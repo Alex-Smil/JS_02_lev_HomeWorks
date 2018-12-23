@@ -4,7 +4,6 @@ body {
 	background-size: cover;
 }
 
-
 .container {
 	width: 1200px;
 	margin: 100px auto;
@@ -47,7 +46,6 @@ body {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-
 	.stuff,
 	.removeStuff {
 		grid-template-columns: repeat(5, 1fr);
@@ -67,5 +65,4 @@ body {
 			}
 		}
 	}
-
 }
