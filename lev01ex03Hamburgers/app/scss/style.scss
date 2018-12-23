@@ -41,7 +41,9 @@ body {
 	}
 
 	.cutlets,
-	.removeCutlets {
+	.removeCutlets,
+	.toping,
+	.removeToping {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
@@ -49,13 +51,6 @@ body {
 	.stuff,
 	.removeStuff {
 		grid-template-columns: repeat(5, 1fr);
-	}
-
-
-	.toping,
-	.removeToping {
-		grid-template-columns: repeat(2, 1fr);
-		
 	}
 
 	.removeCutlets,
