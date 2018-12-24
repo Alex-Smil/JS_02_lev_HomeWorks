@@ -1,0 +1,12 @@
+реализовать удаление <ul> из Dom - 01:36:35
+
+Удаление элемента
+Для удаления элемента вызывается метод removeChild() объекта Node. Этот метод удаляет один из дочерних узлов:
+
+var articleDiv = document.querySelector("div.article");
+// находим узел, который будем удалять - первый параграф
+var removableNode = document.querySelectorAll("div.article p")[0];
+// удаляем узел
+articleDiv.removeChild(removableNode);
+
+src: https://metanit.com/web/javascript/8.5.php
