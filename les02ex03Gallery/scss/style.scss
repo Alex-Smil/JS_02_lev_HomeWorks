@@ -1,0 +1,39 @@
+#filter {
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+#modalImg {
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto auto;
+}
+
+.gallery {
+  width: 1200px;
+  margin: 50px auto 0;
+  //background: #FFFFE0;
+  border: 1px solid black;
+  &__unitsWrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  &__unit {
+    //align-items: center;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+}
