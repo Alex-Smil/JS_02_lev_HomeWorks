@@ -6,7 +6,10 @@ function getJsonData() {
             return;
         }
         // Проверяем ответ сервера
-        if (xhr.status !== 200) {
+        if(xhr.status === 404) {
+            console.log(`Server not found: ${xhr.status}: ${xhr.statusText}`);
+            return null;
+        } else if (xhr.status !== 200) {
             console.log(`Failed xhr.state !== 200: ${xhr.status}: ${xhr.statusText}`);
         } else {
             try {
