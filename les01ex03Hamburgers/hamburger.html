@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+
+        // На курсе переписать на ES6 с использованием класса !!!!!!!!!!!!
+        //  в remove применить find() для массивов
+
+        //Конструктор класса Hamburger
+        function Hamburger() {
+            this.cutlets = [];
+            this.stuffs = [];
+            this.topings = [];
+            this.price = 0;
+            this.callories = 0;
+            console.log("Вы создали гамбургер без начинки");
+        }
+        // и его прототипы
+
+        Hamburger.prototype.calculatePrice = function() {
+            let cutletPrice = 0;
+            this.cutlets.forEach(cutlet => {
+                cutletPrice += cutlet.price;
+            });
+            
+            let stuffPrice = 0;
+            this.stuffs.forEach(stuff => {
+                stuffPrice += stuff.price;
+            });
+
+            let topingsPrice = 0;
+            this.topings.forEach(toping => {
+                topingsPrice += toping.price;
+            });
+            
+            this.price = cutletPrice + stuffPrice + topingsPrice;
+        };
+
+        Hamburger.prototype.calculateCallories = function() {
+            let cutletsCallories = 0;
+            this.cutlets.forEach(cutlet => {
+                cutletsCallories += cutlet.callories;
+            });
+
+            let stuffCallories = 0;
+            this.stuffs.forEach(stuff => {
+                stuffCallories += stuff.callories;
+            });
+
+            let topingsCallories = 0;
+            this.topings.forEach(toping => {
+                topingsCallories += toping.callories;
+            });
+
+            this.callories = cutletsCallories + stuffCallories + topingsCallories;
+        };
+
+        // ************* addCutlet ***************
+        Hamburger.prototype.addCutlet = function(cutlet) {
+            let index = this.cutlets.indexOf(cutlet);
+            if(index === -1) {
+                this.cutlets.push(cutlet);
+                console.log("Вы добавили: " + cutlet.name);
+                this.calculatePrice();
+                this.calculateCallories();
+            }
+        };
+        Hamburger.prototype.removeCutlet = function(cutlet) {
+            let index = this.cutlets.indexOf(cutlet);
+            if(index === -1) {
+                console.log(cutlet.name + " ранее не добавляли!");
+            } else {
+                console.log("Вы удалили: " + cutlet.name);
+                this.cutlets.splice(index, 1);
+                this.calculatePrice();
+                this.calculateCallories();
+            } 
+        }
+
+
+        // ************ addStuff ***************
+        Hamburger.prototype.addStuff = function(stuff) {
+            let index = this.stuffs.indexOf(stuff);
+            if(index === -1) {
+                this.stuffs.push(stuff);
+                console.log("Вы добавили: " + stuff.name);
+                this.calculatePrice();
+                this.calculateCallories();
+            } else {
+                console.log("Такой sruff уже есть");
+            }
+        };
+        Hamburger.prototype.removeStuff = function(stuff) {
+            let index = this.stuffs.indexOf(stuff);
+            if(index === -1) {
+                console.log(stuff.name + " ранее не добавляли!");
+            } else {
+                console.log("Вы удалили: " + stuff.name);
+                this.stuffs.splice(index, 1);
+                this.calculatePrice();
+                this.calculateCallories();
+            } 
+        };
+
+        // ************** addToping ***********************
+        Hamburger.prototype.addTopping = function(top) {
+            let index = this.topings.indexOf(top);
+            if(index === -1) {
+                this.topings.push(top);
+                console.log("Вы добавили: " + top.name);
+                this.calculatePrice();
+                this.calculateCallories();
+            } else {
+                console.log("Такой уже есть");
+            }
+        };
+
+        Hamburger.prototype.removeTopping = function(top) {
+            let index = this.topings.indexOf(top);
+            if(index === -1) {
+                console.log(top.name + " ранее не добавляли!");
+            } else {
+                console.log("Вы удалили: " + top.name);
+                this.topings.splice(index, 1);
+                this.calculatePrice();
+                this.calculateCallories();
+            }
+        };
+
+        // Начинки и добавки
+        const CUTLET_SMALL = { name: "cutlet_small", price: 50, callories: 75 };
+        const CUTLET_BIG = { name: "cutlet_big", price: 75, callories: 100 };
+
+        const CHEESE_STUFF = { name: "cheese_stuff", price: 10, callories: 25 };
+        const SALAD_STUFF = { name: "salad_stuff", price: 15, callories: 35 };
+        const POTATO_STUFF = { name: "potato_stuff", price: 20, callories: 40 };
+        const MAYO_STUFF = { name: "mayo_stuff", price: 25, callories: 45 };
+        const SPICE_STUFF = { name: "spice_stuff", price: 30, callories: 50 };
+
+        const ONION_TOP = { name: "onion_top", price: 20, callories: 25 };
+        const SESAM_TOP = { name: "sesam_top", price: 20, callories: 50 };
+
+        // *******   TESTING   ********
+        let humb1 = new Hamburger();
+		console.log(humb1);
+        console.log("");
+
+        // test of cutlet
+        humb1.addCutlet(CUTLET_BIG);
+        console.log(humb1);
+        console.log("");
+        humb1.removeCutlet(CUTLET_SMALL);999990
+        humb1.removeCutlet(CUTLET_BIG);
+        console.log(humb1);
+        console.log("");
+
+        // test of stuff
+        humb1.addStuff(SALAD_STUFF);
+        console.log(humb1);
+        console.log("");
+        humb1.removeStuff(POTATO_STUFF);
+        humb1.removeStuff(SALAD_STUFF);
+        console.log(humb1);
+        console.log("");
+
+        // test of topings
+        humb1.addTopping(SESAM_TOP);
+        console.log(humb1);
+        console.log("");
+        humb1.removeTopping(ONION_TOP);
+        humb1.removeTopping(SESAM_TOP);
+        console.log(humb1);
+        console.log("");
+
+	</script>
+</body>
+</html>
