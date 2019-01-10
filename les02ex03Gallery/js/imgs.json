@@ -1,0 +1,22 @@
+[
+  {
+    "imgMin": "./img/min/1.jpg",
+    "imgMax": "./img/max/1.jpg"
+  },
+  {
+    "imgMin": "./img/min/2.jpg",
+    "imgMax": "./img/max/2.jpg"
+  },
+  {
+    "imgMin": "./img/min/3.jpg",
+    "imgMax": "./img/max/3.jpg"
+  },
+  {
+    "imgMin": "./img/min/4.jpg",
+    "imgMax": "./img/max/4.jpg"
+  },
+  {
+    "imgMin": "./img/min/5.jpg",
+    "imgMax": "./img/max/5.jpg"
+  }
+]

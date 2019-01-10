@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/init.js"></script>
+	<script src="js/validator.js" defer></script>
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="packages/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+	<script src="packages/particles.min.js"></script>
+</head>
+<body>
+	<div id="particles-js"></div>
+	<script>
+		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+		particlesJS.load('particles-js', 'json/particles.json', function() {
+		console.log('callback - particles.js config loaded');
+		});
+	  </script>
+
+	<div class="container">
+		<form id="feedback" action="">
+			<h2>Feedback form</h2>
+			<div id="nameWrap" class="inputWrap">
+				<input id="name" class="input" autofocus autocomplete="off" type="text" name='name' placeholder="Введите ваше имя">
+				<i class="far fa-question-circle"></i>
+			</div>
+			<div id="emailWrap" class="inputWrap">
+				<input id="email" class="input" autocomplete="off" type="text" name='email' placeholder="Email">
+				<i class="far fa-question-circle"></i>    
+			</div>
+			<div id="telWrap" class="inputWrap">
+				<input id="tel" class="input" autocomplete="off" type="text" name='tel' placeholder="+7(495)123-4567">    
+				<i class="far fa-question-circle"></i>
+			</div>
+			<div id="textAreaWrap" class="inputWrap">
+				<textarea id="textArea" class="input" autocomplete="off" name="textArea" id="" cols="30" rows="10" placeholder="Введите текст"></textarea>    
+				<i class="far fa-question-circle"></i>
+			</div>
+			<!-- <div id="btnWrap">
+				<button id="btn">Send</button>
+			</div> -->
+			<div id="btnWrap">
+				<input id="btn" type="submit" value="Отправить">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
