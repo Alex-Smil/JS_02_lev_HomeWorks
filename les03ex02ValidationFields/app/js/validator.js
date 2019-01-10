@@ -37,7 +37,7 @@ function validateInput(eventObj) {
 
     // **************** Обработчики для отдельных полей формы ****************
     function validateName(nameInput, event) {
-        if((nameInput.value === '') || (/(^[а-яёА-ЯЁ']{1,3}$)|(^[a-z']{1,3}$)/i.test(nameInput.value))) { // если введенные данные валидны
+        if((nameInput.value === '') || (/(^[а-яё']{1,3}$)|(^[a-z']{1,3}$)/i.test(nameInput.value))) { // если введенные данные валидны
             switch(event) {
                 case 'input':
                     nameColorTimers.forEach(nameTimer => { // Чистим timerIdCollect если это уже не первое вхождение, иначе придут задержки от предыдущих экземпляров
@@ -102,7 +102,7 @@ function validateInput(eventObj) {
     }
 
     function validateTelephone(telInput, event) {
-        if((telInput.value === '') || (/\+\d\(\d{3}\)\d{3}-\d{4}/.test(telInput.value))) {
+        if((telInput.value === '') || (/^\+\d\(\d{3}\)\d{3}-\d{4}$/.test(telInput.value))) {
             switch(event) {
                 case 'input':
                     telColorTimers.forEach((telTimer) => {
