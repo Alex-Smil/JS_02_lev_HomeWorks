@@ -1,0 +1,1 @@
+.container{width:961px;margin:0 auto}.container #textInput{width:100%;padding-left:5px}.container #autoCompUl{list-style:none;padding-left:5px;background:#f5f5f5}.container #autoCompUl .suggestion{border-bottom:1px solid #000}.container #autoCompUl .link{text-decoration:none;color:#000;cursor:default}.container #autoCompUl .link:hover{color:#696969;transform:scale(1.2,1.2)}
