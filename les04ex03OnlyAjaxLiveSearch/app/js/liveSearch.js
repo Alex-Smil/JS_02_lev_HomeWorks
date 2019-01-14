@@ -1,13 +1,11 @@
 
 $(document).ready(function() {
     $('#textInput').on('keyup', function() {
-        
         autoComplete($(this).val());
         // $('#autoCompUl').show();// Если сотавить здесь, то лагает немного. см в insertList()
     });
 
     $('#autoCompUl').on('click', function(e) {//Эффект всплытия события
-        
         $('#textInput').val(e.target.textContent);
         $('#autoCompUl').hide();
         e.preventDefault();
