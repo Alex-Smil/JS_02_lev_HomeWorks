@@ -50,7 +50,7 @@ function autoComplete(str) {
         }
 
         list.forEach(function(city) {
-            $autoCompUl.append(`<li class='suggestion'><a class='link'>${city}</a></li>`);
+            $autoCompUl.append(`<li><a class='link'>${city}</a></li>`);
         });
 
         $('#autoCompUl').show();
