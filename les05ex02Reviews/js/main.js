@@ -1,11 +1,11 @@
 let reviewsCount = 0;
 
 $(document).ready(function() {
-    let reviewsWrapper = $('#reviewsWrapper');
+    let $reviewsWrapper = $('#reviewsWrapper');
 
     // Создаем контейнер для всех reviews
     let reviews = new ReviewsContainer('reviews');
-    reviews.render();
+    reviews.render($reviewsWrapper);
     
     
     

@@ -3,6 +3,8 @@ class Review {
         this.id_user = id_user;
         this.id_comment = id_comment;
         this.text = text;
+
+        console.log(`From Review = id_user: ${this.id_user}; id_comment: ${this.id_comment} text: ${this.text}`);
     }
 
     render($jQueryElement) {

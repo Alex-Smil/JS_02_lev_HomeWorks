@@ -2,7 +2,7 @@ class ReviewsContainer {
     constructor(id_container) {
         this.id = id_container;
         this.reviewsItems = [];
-        // getReviews() Здесь полчаем отзывы из json файла
+        this.getReviews(); // Здесь полчаем отзывы из json файла
     }
 
     getReviews() {
@@ -14,24 +14,34 @@ class ReviewsContainer {
             context: this,
             dataType: 'json',
             success: function(data) {
+                console.log('Ajax Удача');
                 // Или создать или все таки найти имеющийся ???
                 let $reviews = $('<div />', {
                         id: 'reviews',
                         text: 'Отзывы'
                 });
+                console.log(`From ajax $reviews: ${$reviews.id}`);
                 // или
                 // let $reviews = $('#reviews');
 
-                // Копируем отзывы из JSON в reviewsItems[] текущего экземпляра            
+                // Копируем отзывы из JSON в reviewsItems[] текущего экземпляра 
+                // Создаем экземпляры reviews по данным из json
+                // и сразу же render-им их в <div id="reviews"> Отзывы  ... </div>        
+                // console.log('reviewsItems.length: ' + this.reviewsItems.length);
+                
                 for (let i = 0; i < data.comments.length; i++) {
-                    this.reviewsItems.push(data.comments[i]);
-                    // Создаем экземпляры reviews по данным из json
-                    // и сразу же render-им их в document
-                    new Review(data.comments.id_user,
-                                data.comments.id_comment,
-                                data.comments.text,
-                    ).render($reviews);
+                    // console.log(data.comments[i].id_user,
+                    // data.comments[i].id_comment,
+                    // data.comments[i].text);
+
+                    this.reviewsItems.push(new Review(data.comments[i].id_user,
+                                                        data.comments[i].id_comment,
+                                                        data.comments[i].text,
+                                                        ).render($reviews));
+                    
+                    
                 }
+                // console.log('reviewsItems.length: ' + this.reviewsItems.length);
             },
             error: function(error) {
                 consol.log(`error_message: ${error}`);
@@ -41,7 +51,10 @@ class ReviewsContainer {
 
     render($jQueryElement) {
         // let $reviews = $('#reviews');
-        
-
+        let $reviews = $('<div />', {
+            id: 'reviews',
+            text: 'Отзывы'
+        });
+        $reviews.appendTo($jQueryElement);
     }
 }
