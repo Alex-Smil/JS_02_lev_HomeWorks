@@ -2,7 +2,6 @@ $(document).ready(function() {
     // Контейнер с товарами
     let $goodContainer = $('#goods');
     
-    
     // Создаем товары
     let good1 = new Good(125, 'Коврик для мыши', 400);
     good1.render($goodContainer);
@@ -46,8 +45,6 @@ $(document).ready(function() {
             let idProduct = parseInt(ui.draggable[0].id);
             let price = parseInt($(ui.draggable[0]).children().find('.product-price').text());
             basket.addProduct(idProduct, price);
-
-            
         }
     });
 });

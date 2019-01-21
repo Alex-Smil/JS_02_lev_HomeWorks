@@ -29,7 +29,6 @@ class Good {
             'data-id': this.id
         });
 
-        // *********** ДЗ № 1 *************
         let $goodBtnRemove = $('<button />', {
             class: 'removeGood',
             text: 'Удалить товар',
@@ -41,8 +40,8 @@ class Good {
         $goodId.appendTo($goodContainer);
         $goodPrice.appendTo($goodContainer);
         $goodBtnAdd.appendTo($goodContainer);
-        $goodBtnRemove.appendTo($goodContainer); // ДЗ № 1
-
+        $goodBtnRemove.appendTo($goodContainer);
+        
         $goodContainer.appendTo($jQueryElement);
     }
 }
