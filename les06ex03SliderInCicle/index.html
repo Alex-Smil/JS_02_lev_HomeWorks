@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            let $slides = $('.slider .slide');
+            let $btn1 = $('#btn1');
+            let $btn2 = $('#btn2');
+            const ACTIVE_CLASS = 'active';
+
+            $slides.not('.' + ACTIVE_CLASS).hide();
+
+            $btn1.on('click', function() {
+                if ($slides.filter('.' + ACTIVE_CLASS).prev().hasClass('slide')) {
+                    $slides
+                        .filter('.' + ACTIVE_CLASS)
+                        .slideUp(3000)
+                        .removeClass(ACTIVE_CLASS)
+                        .prev()
+                        .addClass(ACTIVE_CLASS)
+                        .slideDown(3000);
+                } else {
+                    console.log('No slide (top)');
+                    $slides
+                        .filter('.' + ACTIVE_CLASS)
+                        .slideUp(3000) // Прячем элемент
+                        .removeClass(ACTIVE_CLASS)
+                        .parent().children(':last-child')
+                        .addClass(ACTIVE_CLASS)
+                        .slideDown(3000);
+                }
+            });
+
+            $btn2.on('click', function() {
+                if ($slides.filter('.' + ACTIVE_CLASS).next().hasClass('slide')) {
+                    $slides
+                        .filter('.' + ACTIVE_CLASS)
+                        .slideUp(3000)
+                        .removeClass(ACTIVE_CLASS)
+                        .next()
+                        .addClass(ACTIVE_CLASS)
+                        .slideDown(3000);
+                } else {
+                    console.log('No slide (down)');
+                    $slides
+                        .filter('.' + ACTIVE_CLASS)
+                        .slideUp(3000) // Прячем элемент
+                        .removeClass(ACTIVE_CLASS)
+                        .parent().children(':first-child')
+                        .addClass(ACTIVE_CLASS)
+                        .slideDown(3000);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="slider">
+        <div class="slide">
+            <img src="img/1.jpg" alt="" width="300" height="180">
+        </div>
+        <div class="slide active">
+            <img src="img/2.jpg" alt="" width="300" height="180">
+        </div>
+        <div class="slide">
+            <img src="img/3.jpg" alt="" width="300" height="180">
+        </div>
+        <div class="slide">
+            <img src="img/4.jpg" alt="" width="300" height="180">
+        </div>
+        <div class="slide firstSlide">
+            <img src="img/5.jpg" alt="" width="300" height="180">
+        </div>
+    </div>
+    <button id="btn1">Вниз</button>
+    <button id="btn2">Вверх</button>
+</body>
+</html>
