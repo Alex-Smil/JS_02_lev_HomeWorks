@@ -7,31 +7,23 @@ class Basket {
     }
 
     getItems() {
-        let appendId = `.${this.class}__items`; // class='basket__items'
-        // let appendId = $(`.${this.class}__items`); // class='basket__items'
+        // let appendId = `.${this.class}__items`; // class='basket__items'
+        let appendId = $(`.${this.class}__items`); // class='basket__items'
 
         $.ajax({
             type: 'GET',
-            url: '../json/get_items.json',
+            url: './json/get_items.json',
             context: this,
             dataType: 'json',
             success: function(data) {
-                // let $basketData = $('<div />', {
-                //     class: 'basket__itemsData'
-                // });
                 this.amount = data.amount;  // Общая стоимость товаров в корзине
 
                 for(let i = 0; i < data.basket.length; i++) {
                     this.basketItems.push(data.basket[i]);
                 }
 
-                $(`${appendId}`).append(`<p>Всего товаров: ${this.basketItems.length}</p>`);
-                $(`${appendId}`).append(`<p>Общая стоимость : ${this.amount}</p>`);
-
-                // appendId.append(`<p>Всего товаров: ${this.basketItems.length}</p>`);
-                // appendId.append(`<p>Общая стоимость : ${this.amount}</p>`);
-
-
+                appendId.append(`<p>Всего товаров: ${this.basketItems.length}</p>`);
+                appendId.append(`<p>Общая стоимость : ${this.amount}</p>`);
 
                 this.refreshLeftBar();
             },
@@ -86,7 +78,7 @@ class Basket {
     }
     
     removeProduct(idProduct, price) {
-        if(this.myFindIndex(idProduct)) {
+        if(this.myFindIndex(idProduct) !== false) { // Если не указать явно false, то индекс 0 будет разценен как false и 1 элемент мы не сможем удалить.
             console.log(`Remove product id: ${idProduct}`);
             this.basketItems.splice(this.myFindIndex(idProduct), 1);
             this.amount -= price;
