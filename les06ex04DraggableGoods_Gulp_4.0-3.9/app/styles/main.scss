@@ -1,0 +1,20 @@
+@import 'blocks/basket';
+@import 'blocks/leftBar';
+@import 'blocks/goodsCatalog';
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 961px;
+    margin: 0 auto;
+}
+
+.goodsWrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "leftBar goods goods goods" ". goods goods goods";
+    grid-gap: 15px;
+}
