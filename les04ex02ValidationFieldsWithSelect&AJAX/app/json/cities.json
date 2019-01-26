@@ -1,0 +1,30 @@
+[
+  {
+    "value": "moscow",
+    "text": "Москва"
+  },
+  {
+    "value": "st.petersburg",
+    "text": "Санкт-Петербург"
+  },
+  {
+    "value": "samara",
+    "text": "Самара"
+  },
+  {
+    "value": "ufa",
+    "text": "Уфа"
+  },
+  {
+    "value": "ekaterinburg",
+    "text": "Екатеринбург"
+  },
+  {
+    "value": "tomsk",
+    "text": "Томск"
+  },
+  {
+    "value": "novosibirsk",
+    "text": "Новосибирск"
+  }
+]

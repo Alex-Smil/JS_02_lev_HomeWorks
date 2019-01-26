@@ -1,0 +1,21 @@
+{
+  "name": "les06x01BirthdayJQueryInput",
+  "authors": [
+    "Alex-Smil <alexsmile39@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.12.1"
+  }
+}
