@@ -1,0 +1,15 @@
+{
+    "result": 1,
+    "comments": [
+        {
+            "id_user": 101,
+            "id_comment": 1,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque tempora, corrupti doloremque enim quia obcaecati aut dicta totam exercitationem praesentium odio labore assumenda natus, provident nostrum commodi. Officia explicabo nulla facilis laborum inventore nesciunt doloremque eligendi, tempore hic ratione obcaecati tenetur laudantium odit aut repudiandae adipisci distinctio, quo assumenda."
+        },
+        {
+            "id_user": 102,
+            "id_comment": 2,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque tempora, corrupti doloremque enim quia obcaecati aut dicta totam exercitationem praesentium odio labore assumenda natus, provident nostrum commodi. Officia explicabo nulla facilis laborum inventore nesciunt doloremque eligendi, tempore hic ratione obcaecati tenetur laudantium odit aut repudiandae adipisci distinctio, quo assumenda."
+        }
+    ]
+}

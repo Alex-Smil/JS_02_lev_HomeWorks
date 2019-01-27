@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/dark-hive/jquery-ui.min.css">
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/dark-hive/theme.css">
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+	<script src="js/init.js" defer></script>
+	<script src="js/citiesAjaxGetter.js" defer></script>
+	<script src="js/validator.js" defer></script>
+	<!-- <script src="js/show&hideTooltip.js" defer></script> - Вместо этого скрипта будут работать jQuery UI компоненты -->
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+	<div id="particles-js"></div>
+	<script>
+		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+		particlesJS.load('particles-js', 'json/particles.json', function() {
+		console.log('callback - particles.js config loaded');
+		});
+	  </script>
+
+	<div class="container">
+		<form id="feedback" action="">
+			<h2>Feedback form</h2>
+			<div id="nameWrap" class="inputWrap">
+				<input id="name" class="input" autofocus autocomplete="off" type="text" name='name' placeholder="Введите ваше имя">
+				<div id="nameDialog" class="dialog" title="Basic dialog">
+					<p>Имя не длиннее 3х символов</p>
+				</div>
+				<i class="far fa-question-circle" title="Имя не длиннее 3х символов"></i>
+			</div>
+			<div id="emailWrap" class="inputWrap">
+				<input id="email" class="input" autocomplete="off" type="text" name='email' placeholder="Email">
+				<div id="emailDialog" class='dialog' title="Basic dialog">
+					<p>формат почты mail@box.ru или mail@box.ru.com</p>
+				</div>
+				<i class="far fa-question-circle" title="формат почты mail@box.ru или mail@box.ru.com"></i>  
+				  
+			</div>
+			<div id="telWrap" class="inputWrap">
+				<input id="tel" class="input" autocomplete="off" type="text" name='tel' placeholder="+7(495)123-4567">
+				<div id="telDialog" class='dialog' title="Basic dialog">
+					<p>Формат должен соответствовать +7(495)123-4567</p>
+				</div>   
+				<i class="far fa-question-circle" title="телефон в формате +7(495)123-4567"></i>
+			</div>
+			<div id="citiesSelectWrap" class="inputWrap"> 
+				<select id="citiesSelect" class="cities__select" name="select">
+					<!--Это место отработает скрипт-->
+					<!--<option value="fromAJAX">fromAJAX</option>-->
+				</select>
+				<i class="far fa-question-circle" title="Откуда вы? Выбирите Ваш город"></i>
+			</div>
+			<div id="datepickerWrap" class="inputWrap">
+				<input id="datepicker" class="input" autocomplete="off" type="text" placeholder="Ваша дата рождения">
+				<i class="far fa-question-circle" title="Укажите вашу дату рождения"></i>
+			</div>
+			<div id="textAreaWrap" class="inputWrap">
+				<textarea id="textArea" class="input" autocomplete="off" name="textArea" cols="30" rows="10" placeholder="Введите текст"></textarea> 
+				<div id="textAreaDialog" class='dialog' title="Basic dialog">
+					<p>Текст не должен быть длинне 5 символов</p>
+				</div>    
+				<i class="far fa-question-circle" title="Текст не должен содержать более 5 символов"></i>
+			</div>
+			<div id="btnWrap">
+				<input id="btn" type="submit" value="Отправить">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
